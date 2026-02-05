@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Fighter II - Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1>Rock Paper Scissors</h1>
+        </header>
+
+        <!-- Health bars section -->
+        <div class="health-bars">
+            <div class="health-bar-container">
+                <div class="health-bar player-health"></div>
+            </div>
+            <div class="health-bar-container">
+                <div class="health-bar computer-health"></div>
+            </div>
+        </div>
+
+        <!-- Fighter display area -->
+        <div class="fighters-area">
+            <div class="fighter player-fighter">
+                <div class="fighter-sprite player-sprite"></div>
+                <p class="fighter-name">Player</p>
+            </div>
+            <div class="fighter computer-fighter">
+                <div class="fighter-sprite computer-sprite"></div>
+                <p class="fighter-name">Computer</p>
+            </div>
+        </div>
+
+        <!-- Move selection buttons -->
+        <div class="move-selection">
+            <button class="move-btn" data-move="hadouken">Hadouken</button>
+            <button class="move-btn" data-move="shoryuken">Shoryuken</button>
+            <button class="move-btn" data-move="hurricane">Hurricane Kick</button>
+        </div>
+
+        <!-- Result display -->
+        <div class="result-display">
+            <p class="result-text">Choose your move!</p>
+        </div>
+    </div>
+</body>
+</html>

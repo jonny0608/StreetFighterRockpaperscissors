@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 800px;
+    background: linear-gradient(to bottom, #8B2828 0%, #8B2828 70%, #d3d3d3 70%, #d3d3d3 100%);
+    border: 8px solid #4a0e0e;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.game-header {
+    background-color: #e8e8e8;
+    padding: 15px;
+    text-align: center;
+    border: 3px solid #333;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    color: #333;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Health bars */
+.health-bars {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.health-bar-container {
+    flex: 1;
+    height: 40px;
+    background-color: #d8d8d8;
+    border: 3px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.health-bar {
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 17px;
+}
+
+.player-health {
+    width: 100%;
+    background: linear-gradient(to right, #FFD700, #FFA500);
+}
+
+.computer-health {
+    width: 100%;
+    background: linear-gradient(to right, #FFD700, #FFA500);
+}
+
+/* Fighters area */
+.fighters-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    min-height: 200px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.fighter {
+    text-align: center;
+}
+
+.fighter-sprite {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges; 
+}
+
+/* Player sprite - Ryu idle stance */
+.player-sprite {
+    background-image: url('ryu-idle.png'); /* You'll need to extract a single idle pose */
+    transform: scaleX(1); /* Facing right */
+}
+
+/* Computer sprite - Ryu idle stance (mirrored) */
+.computer-sprite {
+    background-image: url('ryu-idle.png'); /* Same sprite */
+    transform: scaleX(-1); /* Flip horizontally to face left */
+}
+
+.fighter-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Move selection buttons */
+.move-selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.move-btn {
+    background-color: #8B2828;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 15px 30px;
+    border: 3px solid #5a1818;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.move-btn:hover {
+    background-color: #a83232;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.move-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Result display */
+.result-display {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.result-text {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .game-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .health-bars {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .fighter-sprite {
+        width: 100px;
+        height: 100px;
+    }
+
+    .move-btn {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+
+    .result-text {
+        font-size: 1.2rem;
+    }
+}
